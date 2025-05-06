@@ -34,7 +34,6 @@ apt install ecryptfs-utils cryptsetup -y
 sudo adduser cryptouser
 su - cryptouser
 ```
-<img src = "img/11_2_2.jpg" width = 100%>
 
 3. Зашифруйте домашний каталог пользователя **/home/cryptouser** с помощью **eCryptfs**:
 ```
@@ -42,14 +41,14 @@ touch text1 text2
 ```
 - Посмотрим содержимое еще не зашифрованной домашней директории пользователя:
   
-<img src = "img/11_2_2.jpg" width = 100%>
+<img src = "img/hw_13_2_1_1.jpg" width = 100%>
 
 - Зашифруем содержимое каталога:
 ```
 sudo ecryptfs-migrate-home -u cryptouser
 sudo ls -la /home/cryptouser
 ```
-<img src = "img/11_2_2.jpg" width = 100%>
+<img src = "img/hw_13_2_1_2.jpg" width = 100%>
 
 ---
 
