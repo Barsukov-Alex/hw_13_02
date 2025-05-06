@@ -23,8 +23,36 @@
 2. Добавьте пользователя cryptouser.
 3. Зашифруйте домашний каталог пользователя с помощью eCryptfs.
 
+**Ответ:**
 
-*В качестве ответа  пришлите снимки экрана домашнего каталога пользователя с исходными и зашифрованными данными.*  
+1. Установим **ecryptfs** в ВМ под управлением **Ubuntu 22.04.2**:
+```
+apt install ecryptfs-utils cryptsetup -y
+```
+2. Добавим пользователя **cryptouser**:
+```
+sudo adduser cryptouser
+su - cryptouser
+```
+<img src = "img/11_2_2.jpg" width = 100%>
+
+3. Зашифруйте домашний каталог пользователя **/home/cryptouser** с помощью **eCryptfs**:
+```
+touch text1 text2
+```
+- Посмотрим содержимое еще не зашифрованной домашней директории пользователя:
+  
+<img src = "img/11_2_2.jpg" width = 100%>
+
+- Зашифруем содержимое каталога:
+```
+sudo ecryptfs-migrate-home -u cryptouser
+sudo ls -la /home/cryptouser
+```
+<img src = "img/11_2_2.jpg" width = 100%>
+
+---
+
 
 ### Задание 2
 
