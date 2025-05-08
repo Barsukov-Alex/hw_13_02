@@ -76,9 +76,25 @@ sudo cryptsetup -y -v --type luks2 luksFormat /dev/sdb1
 
 <img src = "img/hw_13_2_2_3.jpg" width = 100%>
 
-*В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*
+Смонтируем раздел:
 
 
+```
+sudo cryptsetup luksOpen /dev/sdb1 luks_disk
+ls /dev/mapper/disk
+```
+
+Отформатируем раздел:
+```
+sudo dd if=/dev/zero of=/dev/mapper/luks_disk
+sudo mkfs.ext4 /dev/mapper/luks_disk
+```
+Монтирование открытого раздела:
+```
+mkdir .secret
+sudo mount /dev/mapper/luks_disk .secret/
+```
+<img src = "img/hw_13_2_2_4.jpg" width = 100%>
 
 
 
