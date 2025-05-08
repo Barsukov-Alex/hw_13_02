@@ -69,6 +69,13 @@ sudo apt install cryptsetup -y
 
 3. Зашифруйте созданный раздел с помощью LUKS.
 
+```
+sudo cryptsetup -y -v --type luks2 luksFormat /dev/sdb1
+
+```
+
+<img src = "img/hw_13_2_2_3.jpg" width = 100%>
+
 *В качестве ответа пришлите снимки экрана с поэтапным выполнением задания.*
 
 
