@@ -56,6 +56,13 @@ sudo ls -la /home/cryptouser
 ### Задание 2
 
 1. Установите поддержку **LUKS**.
+```
+sudo apt install cryptsetup -y
+
+```
+<img src = "img/hw_13_2_2_1.jpg" width = 100%>
+
+
 2. Создайте небольшой раздел, например, 100 Мб.
 3. Зашифруйте созданный раздел с помощью LUKS.
 
